@@ -45,10 +45,11 @@ module Bosh::Monitor
         job = heartbeat.job
         id = heartbeat.node_id
         agent_id = heartbeat.agent_id
+        index = heartbeat.index
         if options["prefix"]
-          [options["prefix"], deployment, job, id, agent_id].join '.'
+          [options["prefix"], deployment, job, index, id, agent_id].join '.'
         else
-          [deployment, job, id, agent_id].join '.'
+          [deployment, job, index, id, agent_id].join '.'
         end
       end
 
